@@ -62,8 +62,20 @@ int vec_get(Vector *vec, size_t index) {
     return vec->items[index];
 }
 
-void vec_pop(Vector *vec) {
+int vec_pop(Vector *vec) {
+    if (!vec) {
+        return -1;
+    }
 
+    if (vec->len == 0) {
+        return -1;
+    }
+
+    int value = vec->items[vec->len - 1];
+
+    vec->len--;
+
+    return value;
 }
 
 void vec_free(Vector *vec) {
