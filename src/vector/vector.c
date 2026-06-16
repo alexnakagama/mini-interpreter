@@ -62,8 +62,8 @@ int vec_get(Vector *vec, size_t index) {
     return vec->items[index];
 }
 
-void vec_pop(Vector *vec, size_t index) {
-    
+void vec_pop(Vector *vec) {
+
 }
 
 void vec_free(Vector *vec) {
