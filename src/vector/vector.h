@@ -1,4 +1,5 @@
-#include <cstddef>
+#pragma once
+
 #include <stddef.h>
 
 typedef struct Vector {
@@ -7,7 +8,8 @@ typedef struct Vector {
     size_t cap;
 } Vector;
 
-void vector_init(Vector *vec);
-void vector_push(Vector *vec, int value);
-int vector_get(Vector *vec, size_t index);
-void vector_free(Vector *vec);
+Vector *vec_init(Vector *vec);
+void vec_push(Vector *vec, int value);
+int vec_get(Vector *vec, size_t index);
+void vec_free(Vector *vec);
+
