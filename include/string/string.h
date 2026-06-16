@@ -1,0 +1,13 @@
+#pragma once
+
+#include <stddef.h>
+
+typedef struct String {
+    char *data;
+    size_t len;
+    size_t cap;
+} String;
+
+String *str_init(String *str);
+void str_append(String *str, const char *text);
+void str_free(String *str);
