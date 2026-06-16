@@ -3,6 +3,10 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+/*
+    vec_init puts the object into a valid state, it doesnt creates it
+    stack allocated vector
+*/
 Vector *vec_init(Vector *vec) {
     if (!vec) {
         return NULL;
