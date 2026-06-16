@@ -1,4 +1,5 @@
 #include "vector.h"
+
 #include <stddef.h>
 #include <stdlib.h>
 
@@ -54,11 +55,15 @@ int vec_get(Vector *vec, size_t index) {
         return -1;
     }
 
-    if (!index) {
+    if (index >= vec->len) {
         return -1;
     }
 
     return vec->items[index];
+}
+
+void vec_pop(Vector *vec, size_t index) {
+    
 }
 
 void vec_free(Vector *vec) {
@@ -66,5 +71,8 @@ void vec_free(Vector *vec) {
         return;
     }
 
-    free(vec);
+    free(vec->items);
+    vec->items = NULL;
+    vec->len = 0;
+    vec->cap = 0;
 }
