@@ -64,11 +64,18 @@ void str_free(String *str) {
 }
 
 size_t str_len(const String *str) {
+    if (!str) {
+        return 0;
+    }
 
+    return str->len;
 }
 
 void str_clear(String *str) {
+    if (!str) {
+        return;
+    }
 
+    
 }
-
 
