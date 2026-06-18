@@ -40,20 +40,18 @@ void str_append(String *str, const char *text) {
         str->cap = new_cap;
     }
 
-    memcpy(
-        str->data + str->len,
-        text,
-        text_len
-    );
+    memcpy(str->data + str->len, text, text_len);
 
     str->len += text_len;
     str->data[str->len] = '\0';
 }
 
+// todo
 void str_trim(String *str) {
     if (!str) {
         return;
     }
+
 }
 
 void str_free(String *str) {
