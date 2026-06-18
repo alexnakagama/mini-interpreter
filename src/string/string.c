@@ -4,16 +4,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-String *str_init(String *str) {
+void str_init(String *str) {
     if (!str) {
-        return NULL;
+        return;
     }
 
     str->data = NULL;
     str->len = 0;
     str->cap = 0;
-
-    return str;
 }
 
 void str_append(String *str, const char *text) {
@@ -63,6 +61,14 @@ void str_free(String *str) {
     str->data = NULL;
     str->len = 0;
     str->cap = 0;
+}
+
+size_t str_len(const String *str) {
+
+}
+
+void str_clear(String *str) {
+
 }
 
 
