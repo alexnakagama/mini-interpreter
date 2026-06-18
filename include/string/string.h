@@ -11,3 +11,4 @@ typedef struct String {
 String *str_init(String *str);
 void str_append(String *str, const char *text);
 void str_free(String *str);
+void str_trim(String *str);

@@ -50,6 +50,12 @@ void str_append(String *str, const char *text) {
     str->data[str->len] = '\0';
 }
 
+void str_trim(String *str) {
+    if (!str) {
+        return;
+    }
+}
+
 void str_free(String *str) {
     if (!str) {
         return;
@@ -60,3 +66,5 @@ void str_free(String *str) {
     str->len = 0;
     str->cap = 0;
 }
+
+
