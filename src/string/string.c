@@ -41,9 +41,6 @@ void str_trim_left(String *str) {
 
     if (str->len == 0) return;
 
-    for (size_t i = 0; i < str->len; i++) {
-        
-    }
 }
 
 void str_trim_right(String *str) {
