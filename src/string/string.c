@@ -1,5 +1,6 @@
 #include "string/string.h"
 
+#include <ctype.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
@@ -35,10 +36,15 @@ void str_append(String *str, const char *text) {
     str->data[str->len] = '\0';
 }
 
-// todo
+// todo finish the trim function that i dont have idea how to do it
 void str_trim(String *str) {
     if (!str) return;
-
+    
+    for (size_t i = 0; i < str->len; i++) {
+        if (isspace(str->data[i])) {
+            
+        }
+    }
 }
 
 void str_free(String *str) {
