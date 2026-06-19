@@ -36,15 +36,33 @@ void str_append(String *str, const char *text) {
     str->data[str->len] = '\0';
 }
 
-// todo finish the trim function that i dont have idea how to do it
+void str_trim_left(String *str) {
+    if (!str) return;
+
+    if (str->len == 0) return;
+
+    for (size_t i = 0; i < str->len; i++) {
+        
+    }
+}
+
+void str_trim_right(String *str) {
+    if (!str) return;
+
+    if (str->len) return;
+
+    for (size_t i = str->len - 1; i < str->len; i++) {
+
+    }
+}
+
 void str_trim(String *str) {
     if (!str) return;
     
-    for (size_t i = 0; i < str->len; i++) {
-        if (isspace(str->data[i])) {
-            
-        }
-    }
+    if (str->len == 0) return;
+
+    str_trim_left(str);
+    str_trim_right(str);
 }
 
 void str_free(String *str) {
