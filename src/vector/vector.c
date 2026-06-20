@@ -8,7 +8,8 @@
     stack allocated vector
 */
 Vector *vec_init(Vector *vec) {
-    if (!vec) return NULL;
+    if (!vec) 
+        return NULL;
 
     vec->items = NULL;
     vec->cap = 0;
@@ -32,11 +33,14 @@ void vec_push(Vector *vec, int value) {
     if (vec->len == vec->cap) {
         size_t new_cap = vec->cap;
 
-        if (vec->cap == 0) new_cap = 8; 
-        else new_cap = vec->cap * 2;
+        if (vec->cap == 0) 
+            new_cap = 8; 
+        else 
+            new_cap = vec->cap * 2;
 
         int *temp = realloc(vec->items, sizeof(int) * new_cap);
-        if (!temp) return;
+        if (!temp) 
+            return;
 
         vec->items = temp;
         vec->cap = new_cap;
@@ -47,17 +51,21 @@ void vec_push(Vector *vec, int value) {
 }
 
 int vec_get(Vector *vec, size_t index) {
-    if (!vec) return -1;
+    if (!vec) 
+        return -1;
 
-    if (index >= vec->len) return -1;
+    if (index >= vec->len) 
+        return -1;
 
     return vec->items[index];
 }
 
 int vec_pop(Vector *vec) {
-    if (!vec) return -1;
+    if (!vec) 
+        return -1;
 
-    if (vec->len == 0) return -1;
+    if (vec->len == 0) 
+        return -1;
 
     int value = vec->items[vec->len - 1];
 
@@ -67,7 +75,8 @@ int vec_pop(Vector *vec) {
 }
 
 void vec_free(Vector *vec) {
-    if (!vec) return;
+    if (!vec) 
+        return;
 
     free(vec->items);
     vec->items = NULL;
